@@ -6,7 +6,7 @@
 /*   By: abostano <abostano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:41:59 by abostano          #+#    #+#             */
-/*   Updated: 2023/11/01 17:52:26 by abostano         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:00:00 by abostano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_types(va_list args, const char *str)
 	else if (str == 's')
 		len += ft_printstr(va_arg(args, char *));
 	else if (str == 'p')
-		len += 
+		len += ft_print_ptr(va_arg(args, long int));
 	else if (str == 'd' || str == 'i')
 		len += ft_print_num(va_arg(args, int));
 	else if (str == 'u')
