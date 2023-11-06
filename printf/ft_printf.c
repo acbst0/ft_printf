@@ -6,7 +6,7 @@
 /*   By: abostano <abostano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:41:59 by abostano          #+#    #+#             */
-/*   Updated: 2023/11/03 17:00:00 by abostano         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:11:10 by abostano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	ft_types(va_list args, const char *str)
 	else if (str == 'u')
 		len += ft_unsigned(va_arg(args, unsigned int));
 	else if (str == 'x')
-		len += ft_print_hex(va_arg(args, int))
+		len += ft_printhex_low(va_arg(args, int));
 	else if (str == 'X')
-		len += 
+		len += ft_printhex_up(va_arg(args, int));
 }
 
 int	ft_printf(const char *input, ...)

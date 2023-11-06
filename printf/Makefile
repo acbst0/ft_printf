@@ -1,8 +1,11 @@
 NAME	= libftprintf.a
 
-FILES	=
-
-BONUS	=
+FILES	= ft_printf.c \
+			ft_print_s.c \
+			ft_print_ptr.c \
+			ft_print_num.c \
+			ft_print_unsigned.c \
+			ft_print_x.c \
 
 CC	= gcc
 
@@ -23,8 +26,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus: $(BONUS_OBJECTS)
-	ar -r -c $(NAME) $(BONUS_OBJECTS)
 
 .PHONY: all, clean, fclean, re

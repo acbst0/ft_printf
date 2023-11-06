@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_num.c                                     :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abostano <abostano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 09:35:47 by abostano          #+#    #+#             */
-/*   Updated: 2023/11/06 16:13:45 by abostano         ###   ########.fr       */
+/*   Created: 2023/11/06 16:04:23 by abostano          #+#    #+#             */
+/*   Updated: 2023/11/06 17:47:57 by abostano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_num(int i)
+void	ft_putchar(char a)
 {
-	char	*num;
-	int	len;
+	write(1, &a, 1);
+}
 
-	num = ft_itoa(i);
-	len = ft_printstr(num);
-	free(num);
-	return (len);
+unsigned int	ft_unsigned(unsigned int i)
+{
+	if (i >= 10)
+	{
+		unsigned int count;
+		count = ft_unsigned(i / 10);
+		ft_putchar('0' + (i % 10));
+		return (count + 1);
+	}
+	else
+	{
+		ft_putchar('0' + i);
+		return (1);
+	}
 }
