@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prints.c                                        :+:      :+:    :+:   */
+/*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abostano <abostano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 08:31:44 by abostano          #+#    #+#             */
-/*   Updated: 2023/11/01 08:38:22 by abostano         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:35:04 by abostano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printstr(char *str)
 	i = 0;
 	if (str == NULL)
 	{
-		ft_putstr("(null)");
+		ft_printstr("(null)");
 		return (6);
 	}
 	while (str[i])
@@ -28,4 +28,10 @@ int	ft_printstr(char *str)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_printpercent(void)
+{
+	write(1, "%", 1);
+	return (1);
 }

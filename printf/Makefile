@@ -6,6 +6,8 @@ FILES	= ft_printf.c \
 			ft_print_num.c \
 			ft_print_unsigned.c \
 			ft_print_x.c \
+			ft_itoa.c \
+			ft_strlen.c \
 
 CC	= gcc
 
