@@ -6,7 +6,7 @@
 /*   By: abostano <abostano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:41:59 by abostano          #+#    #+#             */
-/*   Updated: 2023/11/07 13:10:33 by abostano         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:50:18 by abostano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ int	ft_printchar(int c)
 {
 	write(1, &c, 1);
 	return (1);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
 
 int	ft_types(va_list args, const char str)
@@ -33,10 +38,8 @@ int	ft_types(va_list args, const char str)
 		len += ft_print_num(va_arg(args, int));
 	else if (str == 'u')
 		len += ft_unsigned(va_arg(args, unsigned int));
-	else if (str == 'x')
-		len += ft_printhex_low(va_arg(args, unsigned int));
-	else if (str == 'X')
-		len += ft_printhex_up(va_arg(args, unsigned int));
+	else if (str == 'x' || str == 'X')
+		len += ft_print_hex(va_arg(args, unsigned int), str);
 	else if (str == '%')
 		len += ft_printpercent();
 	return (len);
